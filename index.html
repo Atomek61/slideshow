@@ -11,12 +11,14 @@
     <link rel="stylesheet" href="buttons.css">
     <script>
       window.onload = ()=>{
-        new Slideshow("example1", [
+        let slideshow = new Slideshow("example1", [
         "img1.jpg", "Fliegenpilz",
         "img2.jpg", "Blautäubling",
         "img3.jpg", "Parasolpilz",
         "img4.jpg", "Schopftintling"
-      ]);}
+      ]);
+      slideshow.start();
+      }
     </script>
     <style>
       img {max-width: 100%;}

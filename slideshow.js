@@ -57,6 +57,9 @@ class Slideshow {
   constructor(containerId, imagelist = null) {
     this.containerId = containerId;
     this.container = document.getElementById(containerId);
+    this.cinemaInterval = 4000;
+    this.isCinema = false;
+    this.cinemaIntervalId = -1;
     this.currentIndex = -1;
     this.container.classList.add("slideshow");
     if (imagelist) {
@@ -109,6 +112,22 @@ class Slideshow {
 // for prev and next buttons
   nextImage(offset) {
     this.showImage(this.currentIndex + offset);
+  }
+
+  start() {
+    if (!this.isCinema) {
+      this.cinemaIntervalId = setInterval(() => {
+        this.nextImage(1);
+      }, this.cinemaInterval);
+      this.isCinema = true;
+    }
+  }
+
+  stop() {
+    if (this.isCinema) {
+      clearInterval(this.cinemaIntervalId);
+      this.isCinema = false;
+    }
   }
 
 }
