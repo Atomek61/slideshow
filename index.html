@@ -1,0 +1,64 @@
+﻿<!DOCTYPE HTML>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Javascript library "slideshow"</title>
+    <link rel="stylesheet" href="slideshow.css"/>
+    <script src="slideshow.js"></script>
+    <link rel="stylesheet" href="modern.css">
+    <link rel="stylesheet" href="buttons.css">
+    <script>
+      window.onload = ()=>{
+        new Slideshow("example1", [
+        "img1.jpg", "Fliegenpilz",
+        "img2.jpg", "Blautäubling",
+        "img3.jpg", "Parasolpilz",
+        "img4.jpg", "Schopftintling"
+      ]);}
+    </script>
+    <style>
+      img {max-width: 100%;}
+    </style>
+
+  </head>
+
+  <body class="body-colors">
+  
+    <header class="header-colors">
+      <h1>Free Javascript-Library for your html photo slideshow</h1>
+      <p>
+        This little library enables you as a bare-metal html coder to create a simple and straight-looking slide show on your website.
+      </p>      
+      <button class="btn" onclick="window.location.href='../../index.html'">Home</button>
+      <div id="example1" style="width: auto; max-width: 400px; aspect-ratio: 4/3"></div>
+    </header>
+
+    <section>
+      <h2>Example A - create a list of images with titles and let <i>slideshow</i> do the work for you.</h2>
+      <div>
+        Click <a href="demoa.html">Demo A</a> and have a look on the source code.
+      </div>
+    </section>
+
+    <section>
+      <h2>Example B - create the div, img and span tags by your own and let <i>slideshow</i> put some live to them.</h2>
+      <div>
+        Click <a href="demob.html">Demo B</a> and have a look on the source code.
+      </div>
+    </section>
+
+    <section>
+      <h2>Example C - Cinema mode: create an html page suitable for a fullscreen slide show of your images.</h2>
+      <div>
+        Click <a href="democ.html">Demo C</a>, press F11 and have a look on the source code. Simple - isnt it?
+      </div>
+    </section>
+
+    <footer>
+      © 2022 J. Schirrmacher
+    </footer>
+
+  </body>
+</html>

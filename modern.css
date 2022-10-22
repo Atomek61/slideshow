@@ -1,0 +1,82 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+/* ---------------- html main structure ---------------- */
+
+header, footer {
+  color: hsl(190, 20%, 96%);
+  background-color: hsl(190, 50%, 15%);
+}
+
+body {
+  font-family: "open sans";
+  padding: 0;
+  margin: 0;
+  background-color: hsl(190, 50%, 15%);
+}
+
+header {
+  padding: 1em 1em 0 1em;
+}
+
+section {
+  color: hsl(0, 0%, 80%);
+  padding: 1em;
+  background-color: hsl(270, 10%, 15%);
+  margin: 1em 2em 1em 2em;
+}
+
+footer {
+  clear: both;
+  padding: 0.5em;
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* ---------------- common content ---------------- */
+
+h2 {
+  border-bottom: 2px solid hsl(0, 0%, 80%);
+}
+
+h3 {
+  font-style: italic;
+}
+
+p {
+  margin: 1em;
+}
+
+/* ---------------- special ---------------- */
+
+@import url(https://fonts.googleapis.com/css?family=Lora);
+.formula {
+  margin-left: 20px;
+  font: 14pt "Lora";
+  font-style: italic;
+}
+
+.formula>span {
+  margin-right: 20px;
+}
+
+u {
+  text-decoration: none;
+  font: 12pt "Lora";
+  font-style: italic;
+  margin: 0 4px 0 4px;
+}
+
+.warnbar {
+  clear: both; 
+  width: 100%;
+  height: 20px;
+  background: url(../images/restrl.png) repeat; 
+}
+
+a:link {color: cornflowerblue;}
+a:visited {color: green;}
+a:hover {color: hotpink;}
+a:active {color: blue;}

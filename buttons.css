@@ -1,0 +1,54 @@
+﻿.btn {
+  border: 0;
+  border-radius: 3px;
+  padding: 0.1em 1em 0.25em 1em;
+  margin: 4px 8px 4px 8px;
+  min-width: 5em;
+  height: 1.85em;
+  color: white;
+  background-color: cornflowerblue;
+}
+
+.imgbtn {
+  border: 0;
+  border-radius: 3px;
+  padding: 2px 2px 0 2px;
+  margin: 0 4px 0 0;
+  background-color: cornflowerblue;
+}
+
+.imgbtn:hover, .btn:hover {
+  box-shadow: 2px 4px 6px 8px hsla(60,50%,50%,0.1), 2px 4px 6px 8px hsla(60,50%,50%,0.2);
+  transition: box-shadow 0.25s;
+}
+
+.imgbtn:active, .btn:active {
+  background-color: cornflowerblue;  
+  box-shadow: 3px 3px 2px #444444 inset;
+  position: relative;
+  left: 1px; top: 1px;
+}
+
+.toolbar [type=radio] {
+  visibility: hidden;
+  position: absolute;
+}
+
+.toolbar img {
+  padding: 2px 2px 2px 2px;
+  cursor:pointer;
+  background-color: #CCCCCC;  
+  border-radius: 3px;
+}
+
+.toolbar input:checked+img {
+  background-color: cornflowerblue;  
+  box-shadow: 3px 3px 2px #444444 inset;
+  position: relative;
+  left: 1px; top: 1px;
+}
+
+.toolbar img:hover {
+  box-shadow: 2px 4px 6px 8px hsla(60,50%,50%,0.1), 2px 4px 6px 8px hsla(60,50%,50%,0.2);
+  transition: box-shadow 0.25s;
+}
