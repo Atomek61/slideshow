@@ -10,19 +10,20 @@
   <body>
     <div id="mydivid" style="font: 18pt verdana; width: 80%; aspect-ratio: 4/3; color: rgb(179, 206, 234); background-color: rgb(21, 58, 71);">
       <div class="title"></div>
-      <div class="images">
-        <img class="fade" src="img1.jpg" data-title="Fliegenpilz"/>
-        <img class="fade" src="img2.jpg" data-title="Blautäubling"/>
-        <img class="fade" src="img3.jpg" data-title="Parasolpilz"/>
-        <img class="fade" src="img4.jpg" data-title="Schopftintling"/>
-        <a class="prev" onclick="this.slideshow.nextImage(-1)">&#10094;</a>
-        <a class="next" onclick="this.slideshow.nextImage(1)">&#10095;</a>
+      <div class="pictures">
+        <img class="picture" src="img1.jpg" data-title="Fliegenpilz"/>
+        <img class="picture" src="img2.jpg" data-title="Blautäubling"/>
+        <img class="picture" src="img3.jpg" data-title="Parasolpilz"/>
+        <img class="picture" src="img4.jpg" data-title="Schopftintling"/>
+        <span class="prev symbol"></span>
+        <span class="next symbol"></span>
       </div>
       <div class="bullets">
-        <span class="bullet" onclick="this.slideshow.showImage(0)"></span>
-        <span class="bullet" onclick="this.slideshow.showImage(1)"></span>
-        <span class="bullet" onclick="this.slideshow.showImage(2)"></span>
-        <span class="bullet" onclick="this.slideshow.showImage(3)"></span>
+        <span class="bullet symbol"></span>
+        <span class="bullet symbol"></span>
+        <span class="bullet symbol"></span>
+        <span class="bullet symbol"></span>
+        <span class="startstop symbol"></span>
       </div>
     </div>
   </body>

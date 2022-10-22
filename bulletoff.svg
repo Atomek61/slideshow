@@ -8,7 +8,7 @@
    version="1.1"
    id="svg5"
    inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
-   sodipodi:docname="btn_stop.svg"
+   sodipodi:docname="bulletoff.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -25,8 +25,8 @@
      inkscape:document-units="px"
      showgrid="true"
      inkscape:zoom="4.4195761"
-     inkscape:cx="91.411482"
-     inkscape:cy="82.134574"
+     inkscape:cx="91.637748"
+     inkscape:cy="82.36084"
      inkscape:window-width="1920"
      inkscape:window-height="1057"
      inkscape:window-x="-8"
@@ -44,13 +44,11 @@
      inkscape:label="Ebene 1"
      inkscape:groupmode="layer"
      id="layer1">
-    <rect
-       style="fill:#5656bb;fill-opacity:1;stroke-width:4.23333"
-       id="rect3857"
-       width="8.4666662"
-       height="8.4666662"
-       x="2.1166666"
-       y="2.1166666"
-       ry="1.0583332" />
+    <circle
+       style="fill:none;fill-opacity:1;stroke:#5599ff;stroke-width:2.1166665;stroke-dasharray:none;stroke-opacity:1"
+       id="path10025"
+       cx="6.3499994"
+       cy="6.3499994"
+       r="5.291666" />
   </g>
 </svg>

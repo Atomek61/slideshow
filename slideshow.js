@@ -8,7 +8,7 @@
 // Usage: place a div in your html, give it an id and create
 // a Slideshow object. You can (A) either let the Slideshow object
 // let create the contents of your div or your can (B) fill it 
-// with your own images.
+// with your own pictures.
 //
 // Insert these lines in your <head>:
 //
@@ -21,7 +21,7 @@
 //   <div id="myslideshowid"></div>
 //
 //   Create a Slideshow instance and initilize it with
-//   the Id of your div and a list of images with url and title.
+//   the Id of your div and a list of pictures with url and title.
 //   let slideshow = new Slideshow("myslideshowid", [img1.jpg, "Image 1", img2.jpg, "Image 2"]);
 //
 // Revision History 
@@ -35,26 +35,27 @@ function mod(n, m) {
 // HTML templates, needed in the case of creating the DOM automatically
 const SLIDESHOWTEMPLATE
   = '<div class="title"></div>\r\n'
-  + '<div class="images">\r\n'
+  + '<div class="pictures">\r\n'
   + '%IMAGES'
-  + '<a class="prev" onclick="this.slideshow.nextImage(-1)">&#10094;</a>\r\n'
-  + '<a class="next" onclick="this.slideshow.nextImage(1)">&#10095;</a>\r\n'
+  + '<span class="prev symbol"></span>\r\n'
+  + '<span class="next symbol"></span>\r\n'
   + '</div>\r\n'
   + '<div class="bullets">\r\n'
   + '%BULLETS'
+  + '<span class="startstop symbol"></span>\r\n'
   + '</div>\r\n';
 
-const IMGTEMPLATE = '<img class="fade" src="%URL" data-title="%TITLE"/>\r\n';
+const IMGTEMPLATE = '<img class="picture" src="%URL" data-title="%TITLE"/>\r\n';
 
-const BULLETTEMPLATE  = '<span class="bullet" onclick="this.slideshow.showImage(%INDEX)"></span>\r\n';
+const BULLETTEMPLATE  = '<span class="bullet symbol"></span>\r\n';
 
 // Main class - instantiate for a slide show
 class Slideshow {
 
 // containerId is the Id of a div or body
-// imageList is an optional string array [url1, title1, url2, title2, .... ] with pairs url/title
+// pictureList is an optional string array [url1, title1, url2, title2, .... ] with pairs url/title
 // if slide show operates on an emtpy container tag, create such a list.
-  constructor(containerId, imagelist = null) {
+  constructor(containerId, picturelist = null) {
     this.containerId = containerId;
     this.container = document.getElementById(containerId);
     this.cinemaInterval = 4000;
@@ -62,63 +63,89 @@ class Slideshow {
     this.cinemaIntervalId = -1;
     this.currentIndex = -1;
     this.container.classList.add("slideshow");
-    if (imagelist) {
+    if (picturelist) {
       this.container.innerHTML = ""; 
-      let imageshtml = "";
+      let pictureshtml = "";
       this.currentIndex = -1;
-      this.imageCount = imagelist.length/2;          
-      for (let i=0; i<this.imageCount; i++)
-        imageshtml += IMGTEMPLATE.replace(/%URL/g, imagelist[i*2]).replace(/%TITLE/g, imagelist[i*2+1]);
+      this.pictureCount = picturelist.length/2;          
+      for (let i=0; i<this.pictureCount; i++)
+        pictureshtml += IMGTEMPLATE.replace(/%URL/g, picturelist[i*2]).replace(/%TITLE/g, picturelist[i*2+1]);
       let bulletshtml = "";
-      for (let i=0; i<this.imageCount; i++)
+      for (let i=0; i<this.pictureCount; i++)
         bulletshtml += BULLETTEMPLATE.replace(/%INDEX/g, (i).toString());
       this.container.innerHTML = SLIDESHOWTEMPLATE
         .replace(/%ID/g, this.containerId)
-        .replace(/%IMAGES/g, imageshtml)
+        .replace(/%IMAGES/g, pictureshtml)
         .replace(/%BULLETS/g, bulletshtml);
     }  
+    
     let bullets = this.container.getElementsByClassName("bullet");
-    for (let i=0; i<bullets.length; i++)
+    for (let i=0; i<bullets.length; i++) {
       bullets[i].slideshow = this;
-    let images = this.container.getElementsByTagName("img");
-    this.imageCount = images.length;
+      bullets[i].addEventListener("click", (event) => {
+        this.stop();
+        this.showPicture(i);
+      });
+    }
+    
+    let startstopButton = this.container.getElementsByClassName("startstop");
+    startstopButton[0].addEventListener('click', (event)=>{
+      if (this.isCinema)
+        this.stop();
+      else
+        this.start(true);
+    });
+    
+    let pictures = this.container.getElementsByClassName("picture");
+    this.pictureCount = pictures.length;
+
     let btn = this.container.querySelector(".next");
-    if (btn)
-      btn.slideshow = this;
+    if (btn) btn.addEventListener("click", (event)=>{
+      this.stop();
+      this.nextPicture(1);
+    });
+
     btn = this.container.querySelector(".prev");
-    if (btn)
-      btn.slideshow = this;
-    this.showImage(0);
+    if (btn) btn.addEventListener("click", (event)=>{
+      this.stop();
+      this.nextPicture(-1);
+    });
+    this.showPicture(0);
   }
 
-// show a certain image by index
-  showImage(index) {
-    index = mod(index, this.imageCount);
+  // show a certain picture by index
+  showPicture(index) {
+    index = mod(index, this.pictureCount);
     if (index!=this.currentIndex) {
-      let images = this.container.getElementsByTagName("img");
+      let pictures = this.container.getElementsByTagName("img");
       let bullets = this.container.getElementsByClassName("bullet");
       if (this.currentIndex!=-1) {
-        images[this.currentIndex].style.display = "none";
-        bullets[this.currentIndex].classList.remove("activeBullet");
+        pictures[this.currentIndex].style.display = "none";
+        bullets[this.currentIndex].style.backgroundImage = 'url("bulletoff.svg")';
       }              
       this.currentIndex = index;
       let title = this.container.querySelector(".title");
-      title.innerHTML = images[this.currentIndex].dataset.title;
-      images[this.currentIndex].style.display = "block";
-      bullets[this.currentIndex].classList.add("activeBullet");
+      title.innerHTML = pictures[this.currentIndex].dataset.title;
+      pictures[this.currentIndex].style.display = "block";
+      bullets[this.currentIndex].style.backgroundImage = 'url("bulleton.svg")';
     }
   }
 
-// for prev and next buttons
-  nextImage(offset) {
-    this.showImage(this.currentIndex + offset);
+  // for prev and next buttons
+  nextPicture(offset) {
+    this.showPicture(this.currentIndex + offset);
   }
 
-  start() {
+  start(immediate = false) {
     if (!this.isCinema) {
       this.cinemaIntervalId = setInterval(() => {
-        this.nextImage(1);
+        this.nextPicture(1);
       }, this.cinemaInterval);
+      let startstopButtons = this.container.getElementsByClassName("startstop");
+      if (startstopButtons.length>0)
+        startstopButtons[0].style.backgroundImage = 'url("stop.svg")';
+      if (immediate)
+        this.nextPicture(1);
       this.isCinema = true;
     }
   }
@@ -126,6 +153,9 @@ class Slideshow {
   stop() {
     if (this.isCinema) {
       clearInterval(this.cinemaIntervalId);
+      let startstopButtons = this.container.getElementsByClassName("startstop");
+      if (startstopButtons.length>0)
+        startstopButtons[0].style.backgroundImage = 'url("start.svg")';
       this.isCinema = false;
     }
   }
