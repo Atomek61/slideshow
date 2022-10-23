@@ -44,10 +44,18 @@
   background-image: url("bulletoff.svg");
 }
 
-.startstop {
+.bullet-active {
+  background-image: url("bulleton.svg");
+}
+
+.cinema {
   display: inline-block;
   background-image: url("start.svg");
   margin-left: 1em;
+}
+
+.cinema-playing {
+  background-image: url("stop.svg");
 }
 
 .picture {
@@ -58,6 +66,8 @@
 .prev, .next {
   position: absolute;
   display: block;
+  width: 1.5em;
+  height: 1.5em;
   top: 50%;
 }
 

@@ -1,4 +1,4 @@
-// Slideshow 1.0 (c) 2022 Jan Schirrmacher
+// Slideshow 1.10 (c) 2022 Jan Schirrmacher
 // Feel free using and copying this library. You must not
 // claim it as your work - preserve my copyright.
 //
@@ -25,7 +25,8 @@
 //   let slideshow = new Slideshow("myslideshowid", [img1.jpg, "Image 1", img2.jpg, "Image 2"]);
 //
 // Revision History 
-// V1.00 JS 2022-10-22
+// V1.00 JS 2022-10-22 Initial release
+// V1.10 JS 2022-10-23 Added cinema mode, renamed image to picture
 
 // helper to enable % for negative numbers
 function mod(n, m) {
@@ -42,7 +43,7 @@ const SLIDESHOWTEMPLATE
   + '</div>\r\n'
   + '<div class="bullets">\r\n'
   + '%BULLETS'
-  + '<span class="startstop symbol"></span>\r\n'
+  + '<span class="cinema symbol"></span>\r\n'
   + '</div>\r\n';
 
 const IMGTEMPLATE = '<img class="picture" src="%URL" data-title="%TITLE"/>\r\n';
@@ -88,8 +89,8 @@ class Slideshow {
       });
     }
     
-    let startstopButton = this.container.getElementsByClassName("startstop");
-    startstopButton[0].addEventListener('click', (event)=>{
+    let cinemaButton = this.container.getElementsByClassName("cinema");
+    cinemaButton[0].addEventListener('click', (event)=>{
       if (this.isCinema)
         this.stop();
       else
@@ -121,13 +122,13 @@ class Slideshow {
       let bullets = this.container.getElementsByClassName("bullet");
       if (this.currentIndex!=-1) {
         pictures[this.currentIndex].style.display = "none";
-        bullets[this.currentIndex].style.backgroundImage = 'url("bulletoff.svg")';
+        bullets[this.currentIndex].classList.remove("bullet-active");
       }              
       this.currentIndex = index;
       let title = this.container.querySelector(".title");
       title.innerHTML = pictures[this.currentIndex].dataset.title;
       pictures[this.currentIndex].style.display = "block";
-      bullets[this.currentIndex].style.backgroundImage = 'url("bulleton.svg")';
+      bullets[this.currentIndex].classList.add("bullet-active");
     }
   }
 
@@ -141,9 +142,9 @@ class Slideshow {
       this.cinemaIntervalId = setInterval(() => {
         this.nextPicture(1);
       }, this.cinemaInterval);
-      let startstopButtons = this.container.getElementsByClassName("startstop");
-      if (startstopButtons.length>0)
-        startstopButtons[0].style.backgroundImage = 'url("stop.svg")';
+      let cinemaButtons = this.container.getElementsByClassName("cinema");
+      if (cinemaButtons.length>0)
+        cinemaButtons[0].classList.add("cinema-playing");
       if (immediate)
         this.nextPicture(1);
       this.isCinema = true;
@@ -153,9 +154,9 @@ class Slideshow {
   stop() {
     if (this.isCinema) {
       clearInterval(this.cinemaIntervalId);
-      let startstopButtons = this.container.getElementsByClassName("startstop");
-      if (startstopButtons.length>0)
-        startstopButtons[0].style.backgroundImage = 'url("start.svg")';
+      let cinemaButtons = this.container.getElementsByClassName("cinema");
+      if (cinemaButtons.length>0)
+        cinemaButtons[0].classList.remove("cinema-playing");
       this.isCinema = false;
     }
   }
