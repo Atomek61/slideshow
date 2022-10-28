@@ -43,7 +43,7 @@ const SLIDESHOWTEMPLATE
   + '<span class="prev symbol"></span>\r\n'
   + '<span class="next symbol"></span>\r\n'
   + '<div class="bullets">\r\n'
-  + '  %BULLETS'+'<span class="cinema symbol"></span>\r\n'
+  + '  %BULLETS' + '<span class="cinema symbol"></span><span class="full symbol"></span>\r\n'
   + '</div>\r\n';
 
 const IMGTEMPLATE = '<img class="picture" src="%URL" data-title="%TITLE"/>\r\n';
@@ -113,6 +113,28 @@ class Slideshow {
       this.imageIndex -= 1;
     });
     this.imageIndex = 0;
+
+    btn = this.container.querySelector(".full");
+    if (btn) btn.addEventListener("click", (event)=>{
+      this.fullscreen = !this.fullscreen;
+    });
+
+    container.addEventListener('fullscreenchange', (event) => {
+      if (document.fullscreenElement != null) {
+        let fullButtons = this.container.getElementsByClassName("full");
+        if (fullButtons.length>0) {
+          fullButtons[0].classList.add("window");
+          fullButtons[0].classList.remove("full");
+        }
+      } else {
+        let fullButtons = this.container.getElementsByClassName("window");
+        if (fullButtons.length>0) {
+          fullButtons[0].classList.add("full");
+          fullButtons[0].classList.remove("window");
+        }
+      }
+    });
+
   }
 
   get imageIndex() {
@@ -178,5 +200,18 @@ class Slideshow {
   speed(factor = 1.5) {
     this.cinemaInterval /= factor;
   }  
+
+  get fullscreen() {
+    return document.fullscreenElement != null;
+  }
+
+  set fullscreen(value) {
+    if (value!=this.fullscreen) {
+      if (value)
+        this.container.requestFullscreen();
+      else
+        document.exitFullscreen();
+    }
+  }
 
 }
