@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link rel="stylesheet" href="../code/slideshow.css"/>
+    <script src="../code/slideshow.js"></script>
+    <script>
+      let slideshow = null;
+      window.onload = ()=> {slideshow = new Slideshow(document.getElementById("mydivid"), [
+        "img1.jpg", "Fliegenpilz",
+        "img2.jpg", "Blautäubling",
+        "img3.jpg", "Parasolpilz",
+        "img4.jpg", "Schopftintling"
+      ]); }
+    </script>
+  </head>
+  <body>
+    <div id="mydivid" style="font: 12pt verdana; width: 80%; aspect-ratio: 4/3; color: white; background-color: black;">
+    </div>
+    <button onclick="slideshow.cinemaInterval = 1000;">Interval 1s</button>
+    <button onclick="slideshow.cinemaInterval = 2000;">Interval 2s</button>
+    <button onclick="slideshow.cinemaInterval = 4000;">Interval 4s</button>
+    <button onclick="slideshow.cinemaInterval = 8000;">Interval 8s</button>
+  </body>
+</html>  

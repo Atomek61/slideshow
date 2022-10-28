@@ -2,13 +2,16 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="48"
-   height="48"
-   viewBox="0 0 12.699999 12.699999"
+   width="400"
+   height="600"
+   viewBox="0 0 105.83333 158.75"
    version="1.1"
    id="svg5"
    inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
-   sodipodi:docname="stop.svg"
+   sodipodi:docname="2x3 400x600.svg"
+   inkscape:export-filename="2x3 400x600.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -24,9 +27,9 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="px"
      showgrid="true"
-     inkscape:zoom="4.4195761"
-     inkscape:cx="92.09028"
-     inkscape:cy="82.587106"
+     inkscape:zoom="0.74564394"
+     inkscape:cx="651.78562"
+     inkscape:cy="355.39751"
      inkscape:window-width="2560"
      inkscape:window-height="1417"
      inkscape:window-x="-8"
@@ -35,8 +38,10 @@
      inkscape:current-layer="layer1">
     <inkscape:grid
        type="xygrid"
-       id="grid1049"
-       empspacing="4" />
+       id="grid9"
+       empspacing="4"
+       originx="0"
+       originy="0" />
   </sodipodi:namedview>
   <defs
      id="defs2" />
@@ -45,20 +50,29 @@
      inkscape:groupmode="layer"
      id="layer1">
     <rect
-       style="fill:#ff0000;fill-opacity:1;stroke-width:4.0989"
-       id="rect3857"
-       width="5.291666"
-       height="12.699999"
+       style="fill:#6f916f;stroke-width:0.216513"
+       id="rect113"
+       width="105.83333"
+       height="158.75"
        x="0"
-       y="-2.3001861e-07"
-       ry="1.0583335" />
+       y="0" />
     <rect
-       style="fill:#ff0000;fill-opacity:1;stroke-width:4.0989"
-       id="rect3857-8"
-       width="5.291666"
-       height="12.699999"
-       x="7.4083328"
-       y="-4.7004701e-08"
-       ry="1.0583333" />
+       style="fill:#b7c8b7;stroke-width:0.214009"
+       id="rect219"
+       width="97.366669"
+       height="150.28333"
+       x="4.2333331"
+       y="4.2333331" />
+    <text
+       xml:space="preserve"
+       style="font-size:8.46667px;font-family:verdana;-inkscape-font-specification:verdana;fill:#008000;stroke:none;stroke-width:2.11667"
+       x="8.4666662"
+       y="16.933332"
+       id="text1570"><tspan
+         sodipodi:role="line"
+         id="tspan1568"
+         style="font-size:8.46667px;fill:#008000;stroke:none;stroke-width:2.11667"
+         x="8.4666662"
+         y="16.933332">2/3 600x200</tspan></text>
   </g>
 </svg>

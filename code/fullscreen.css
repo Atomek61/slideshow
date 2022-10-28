@@ -1,0 +1,24 @@
+.container {
+  position: absolute;
+  aspect-ratio: auto;
+  width: 100%;
+  height: 100%;
+}
+
+.title {
+  position: absolute;
+  width: 100%;
+  top: 0;
+}
+
+.pictures {
+  width: 100%;
+  height: 100%;
+}
+
+.bullets {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+

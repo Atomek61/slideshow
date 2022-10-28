@@ -2,13 +2,16 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="48"
-   height="48"
-   viewBox="0 0 12.699999 12.699999"
+   width="800"
+   height="450"
+   viewBox="0 0 211.66666 119.0625"
    version="1.1"
    id="svg5"
    inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
-   sodipodi:docname="bulleton.svg"
+   sodipodi:docname="16x9 800x450.svg"
+   inkscape:export-filename="16x9 800x450.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -24,9 +27,9 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="px"
      showgrid="true"
-     inkscape:zoom="4.4195761"
-     inkscape:cx="91.864014"
-     inkscape:cy="82.587106"
+     inkscape:zoom="0.52724989"
+     inkscape:cx="1029.8722"
+     inkscape:cy="707.44443"
      inkscape:window-width="2560"
      inkscape:window-height="1417"
      inkscape:window-x="-8"
@@ -35,7 +38,7 @@
      inkscape:current-layer="layer1">
     <inkscape:grid
        type="xygrid"
-       id="grid1049"
+       id="grid9"
        empspacing="4" />
   </sodipodi:namedview>
   <defs
@@ -44,17 +47,30 @@
      inkscape:label="Ebene 1"
      inkscape:groupmode="layer"
      id="layer1">
-    <circle
-       style="fill:none;fill-opacity:1;stroke:#ff0000;stroke-width:2.11667;stroke-dasharray:none;stroke-opacity:1"
-       id="path10025"
-       cx="6.3499994"
-       cy="6.3499994"
-       r="5.291666" />
-    <circle
-       style="fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:2.11667;stroke-opacity:1"
-       id="path21147"
-       cx="6.3499994"
-       cy="6.3499994"
-       r="3.1749997" />
+    <rect
+       style="fill:#d35f5f;stroke-width:0.265173"
+       id="rect113"
+       width="211.66666"
+       height="119.0625"
+       x="0"
+       y="0" />
+    <rect
+       style="fill:#f4d7d7;stroke-width:0.265218"
+       id="rect219"
+       width="203.2"
+       height="110.59583"
+       x="4.2333331"
+       y="4.2333331" />
+    <text
+       xml:space="preserve"
+       style="font-size:8.46666653px;font-family:verdana;-inkscape-font-specification:verdana;fill:#ff0000;stroke:none;stroke-width:2.11667"
+       x="12.7"
+       y="21.166666"
+       id="text1570"><tspan
+         sodipodi:role="line"
+         id="tspan1568"
+         style="stroke-width:2.11667;font-size:8.46666653px;stroke:none"
+         x="12.7"
+         y="21.166666">16/9 800x450</tspan></text>
   </g>
 </svg>

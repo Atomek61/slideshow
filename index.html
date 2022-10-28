@@ -1,0 +1,126 @@
+﻿<!DOCTYPE HTML>
+<html lang="en">
+
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8"/>
+    <title>Javascript library "slideshow"</title>
+    <link rel="stylesheet" href="code/slideshow.css"/>
+    <script src="code/slideshow.js"></script>
+    <link rel="stylesheet" href="modern.css">
+    <link rel="stylesheet" href="buttons.css">
+    <script>
+      window.onload = ()=>{
+        let slideshow = new Slideshow(document.getElementById("example1"), [
+        "demo/img1.jpg", "Fliegenpilz",
+        "demo/img2.jpg", "Blautäubling",
+        "demo/img3.jpg", "Parasolpilz",
+        "demo/img4.jpg", "Schopftintling"
+      ]);
+      slideshow.start();
+      }
+    </script>
+    <style>
+      img {max-width: 100%;}
+    </style>
+
+  </head>
+
+  <body class="body-colors">
+  
+    <header class="header-colors">
+      <h1>Free Javascript-Library for your html photo slideshow</h1>
+      <p>
+        This little library enables you as a bare-metal html coder to create a simple and straight-looking slide show on your website.
+      </p>      
+      <div id="example1" style="width: auto; max-width: 400px; aspect-ratio: 4/3"></div>
+      <p>
+        You can get the code from <a href="https://github.com/Atomek61/slideshow.js">https://github.com/Atomek61/slideshow.js</a>.
+        Put the contents of the <i>code</i> folder into a folder of your choice.
+      </p>
+    </header>
+
+    <section>
+      <h2>Constructor</h2>
+      <h3>Slideshow(container, picturelist = null)</h3>
+      <p>
+        <i>container</i> is the block element (a div) which contains the images.
+      </p>
+      <p>
+        <i>picturelist</i> is an optional array with pairs of <i>url</i> and <i>title</i>, each describing an image file. If a picturelist is defined, the container should be empty and will be       automatically filled with html code forming a valid list of img tags and some controls.
+      </p>
+      <p>
+        Example: <code>let slideshow = new Slideshow(document.getElementById("mydiv"), ["demo/img1.jpg", "Image 1", "demo/img2.jpg", "Image 2"]);</code>
+      </p>
+
+      <h2>Properties</h2>
+      <h3>imageIndex</h3>
+      <p>
+        To show a picture, assign its 0-based index to this property. If the value is outside the range, the modulo value will be assigned. Its not required to check the value before assignment.
+      </p>
+      <p>
+        Example: <code>slideshow.imageIndex += 2;</code>
+      </p>
+      <h3>cinemaInterval</h3>
+      <p>
+        Interval to the next image in milliseconds. Start the automatic slideshow (cinema mode) with <code>slideshow.start();</code>. Default value is 4000 ms. The minimum is 100 ms.
+      </p>
+      <p>
+        Example: <code>slideshow.cinemaInterval = 3000;</code>
+      </p>
+      <h3>autoStop</h3>
+      <p>
+        By default the automatic slideshow is interrupted when the user clicks a navigation control (bullet or prev/next). This behaviour can be changed by the variable <i>autoStop</i>;
+      </p>
+
+      <h2>Methods</h2>
+      <h3>start(immediate = false)</h3>
+      <p>
+        Starts the slideshow. If immediate is true, the next image will be shown immediately.
+      </p>
+      <p>
+        Example: <code>slideshow.start();</code>
+      </p>
+      <h3>stop()</h3>
+      <p>
+        Stops the slideshow. Note: the slideshow is stopped whenever you click on one of the controls.
+      </p>
+      <h3>speed(factor = 1.5)</h3>
+      <p>
+        Simply divides the interval by the factor.
+      </p>
+
+      <h2>CSS</h2>
+      <p>
+        Usually you link the main css file slideshow.css. This will create the normal appearance with title and bullets at the upper or lower borders outside of the image. The title and the bullets can be placed on the image surface by adding the css file fullscreen.css <b>after</b> the file slideshow.css. This lets the slideshows container by fully filled out. Remember the new aspect-ratio css property to control a container block elements size. If most of yout pictures have a 16/9 ratio, consider to set the <code>aspect-ration: 16:9;</code>. 
+      </p>
+
+
+    </section>
+
+    <section>
+      <h2>Example A - create a list of images with titles and let <i>slideshow</i> do the work for you.</h2>
+      <div>
+        Click <a href="demo/demoa.html">Demo A</a> and have a look on the source code.
+      </div>
+    </section>
+
+    <section>
+      <h2>Example B - create the div, img and span tags by your own and let <i>slideshow</i> put some live to them.</h2>
+      <div>
+        Click <a href="demo/demob.html">Demo B</a> and have a look on the source code.
+      </div>
+    </section>
+
+    <section>
+      <h2>Example C - Cinema mode: create an html page suitable for a fullscreen slide show of your images.</h2>
+      <div>
+        Click <a href="demo/democ.html">Demo C</a>, press F11 and have a look on the source code. Simple - isnt it?
+      </div>
+    </section>
+
+    <footer>
+      © 2022 J. Schirrmacher
+    </footer>
+
+  </body>
+</html>

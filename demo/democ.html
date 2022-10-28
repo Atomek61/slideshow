@@ -2,16 +2,16 @@
 <html>
   <head>
     <link rel="stylesheet" href="../code/slideshow.css"/>
+    <link rel="stylesheet" href="../code/fullscreen.css"/>
     <script src="../code/slideshow.js"></script>
     <script>
-      window.onload = ()=> {new Slideshow("mydivid", [
-        "img1.jpg", "Fliegenpilz",
-        "img2.jpg", "Blautäubling",
-        "img3.jpg", "Parasolpilz",
-        "img4.jpg", "Schopftintling"
+      window.onload = ()=> {new Slideshow(document.getElementById("mydivid"), [
+        "16x9 800x450.png", "16/9",
+        "2x3 400x600.png", "2/3",
+        "10x1 1000x100.png", "10/1"
       ]); }
     </script>
   </head>
-  <body id="mydivid" style="margin: 0; width: 100%; aspect-ratio: 16/9; background-color: black; font: 24pt verdana; color: white;">
+  <body id="mydivid" style="padding: 0; margin: 0; border: 0; width: 100%; height:100%; background-color: black; font: 24pt verdana; color: white;">
   </body>
 </html>  

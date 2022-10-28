@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1000"
+   height="100"
+   viewBox="0 0 264.58332 26.458333"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   sodipodi:docname="10x1.svg"
+   inkscape:export-filename="10x1 1000x100.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     showgrid="true"
+     inkscape:zoom="2.1089996"
+     inkscape:cx="407.77627"
+     inkscape:cy="-44.096737"
+     inkscape:window-width="2560"
+     inkscape:window-height="1417"
+     inkscape:window-x="-32000"
+     inkscape:window-y="-32000"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid9"
+       empspacing="4"
+       originx="0"
+       originy="0" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#e9ddaf;stroke:#c8ab37;stroke-width:2.64583;stroke-dasharray:none"
+       id="rect219"
+       width="261.9375"
+       height="23.8125"
+       x="1.3229166"
+       y="1.3229166" />
+    <text
+       xml:space="preserve"
+       style="font-size:8.46667px;font-family:verdana;-inkscape-font-specification:verdana;fill:#808000;stroke:none;stroke-width:2.11667"
+       x="4.1423821"
+       y="11.724351"
+       id="text1570"><tspan
+         sodipodi:role="line"
+         id="tspan1568"
+         style="font-size:8.46667px;fill:#808000;stroke:none;stroke-width:2.11667"
+         x="4.1423821"
+         y="11.724351">10x1 1000x100</tspan></text>
+  </g>
+</svg>
