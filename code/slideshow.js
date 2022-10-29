@@ -28,6 +28,7 @@
 // V1.00 JS 2022-10-22 Initial release
 // V1.10 JS 2022-10-23 Added cinema mode, renamed image to picture
 // V1.20 JS 2022-10-28 Added autoStop, more properties instead of methods, css improvements, fullscreen-support
+// V1.30 JS 2022-10-28 Fullscreen control added
 
 // helper to enable % for negative numbers
 function mod(n, m) {
@@ -134,7 +135,6 @@ class Slideshow {
         }
       }
     });
-
   }
 
   get imageIndex() {
