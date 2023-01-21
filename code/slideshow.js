@@ -41,8 +41,8 @@ const SLIDESHOWTEMPLATE
   + '<div class="pictures">\r\n'
   + '  %IMAGES'
   + '</div>\r\n'
-  + '<span class="prev symbol"></span>\r\n'
-  + '<span class="next symbol"></span>\r\n'
+  + '<span class="prev"></span>\r\n'
+  + '<span class="next"></span>\r\n'
   + '<div class="bullets">\r\n'
   + '  %BULLETS' + '<span class="cinema symbol"></span><span class="full symbol"></span>\r\n'
   + '</div>\r\n';

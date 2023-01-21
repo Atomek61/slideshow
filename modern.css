@@ -78,7 +78,14 @@ u {
 }
 
 code {
-  color: rgb(141, 172, 231);
+  color: cornflowerblue;
+}
+
+pre {
+  margin: 0 2em 0 2em;
+  padding: 0.5em;
+  background-color: rgb(2, 2, 35);
+  color: cornflowerblue;
 }
 
 a:link {color: cornflowerblue;}

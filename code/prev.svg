@@ -2,52 +2,20 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="48"
-   height="48"
-   viewBox="0 0 12.699999 12.699999"
+   width="40"
+   height="60"
+   viewBox="0 0 10.583333 15.874999"
    version="1.1"
    id="svg5"
-   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
-   sodipodi:docname="prev.svg"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
-  <sodipodi:namedview
-     id="namedview7"
-     pagecolor="#ffffff"
-     bordercolor="#000000"
-     borderopacity="0.25"
-     inkscape:showpageshadow="2"
-     inkscape:pageopacity="0.0"
-     inkscape:pagecheckerboard="0"
-     inkscape:deskcolor="#d1d1d1"
-     inkscape:document-units="px"
-     showgrid="true"
-     inkscape:zoom="4.4195761"
-     inkscape:cx="91.864014"
-     inkscape:cy="82.587106"
-     inkscape:window-width="2560"
-     inkscape:window-height="1417"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="layer1">
-    <inkscape:grid
-       type="xygrid"
-       id="grid1049"
-       empspacing="4" />
-  </sodipodi:namedview>
   <defs
      id="defs2" />
   <g
-     inkscape:label="Ebene 1"
-     inkscape:groupmode="layer"
      id="layer1">
     <path
-       id="rect3857"
-       style="fill:#ff0000;fill-opacity:1;stroke-width:2.7326"
-       d="m 8.6712359,0.16226397 c 0.4508832,0 0.9014622,0.17282461 1.2469523,0.51831465 0.6909798,0.69098008 0.6459838,1.76120068 0,2.49442118 L 7.1209431,6.3499995 9.9181882,9.5249992 c 0.6459838,0.7332208 0.6909798,1.8034408 -3e-7,2.4944218 -0.6909798,0.69098 -1.8364268,0.722461 -2.4944212,0 L 3.5681885,7.7860876 C 3.1931406,7.3742939 3.0055976,6.8616405 3.0607266,6.3499992 3.0055976,5.838358 3.1931406,5.3257053 3.5681885,4.9139117 L 7.423767,0.68057855 C 7.7527639,0.31934768 8.2203528,0.16226397 8.6712359,0.16226397 Z"
-       sodipodi:nodetypes="ssscsssscsss" />
+       style="fill:none;stroke:#cc0000;stroke-width:2.11667;stroke-dasharray:none;stroke-dashoffset:45.3543;stroke-opacity:1"
+       d="M 8.4666663,2.6458334 3.1749998,7.9374996 8.4666663,13.229166"
+       id="path23241" />
   </g>
 </svg>
