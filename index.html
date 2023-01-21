@@ -16,6 +16,7 @@
         "demo/img3.jpg", "Parasolpilz",
         "demo/img4.jpg", "Schopftintling"
       ]);
+      slideshow.speed(2);
       slideshow.start();
       }
     </script>
@@ -34,19 +35,65 @@
       </p>      
       <div id="example1" style="width: auto; max-width: 400px; aspect-ratio: 4/3"></div>
       <p>
-        You can get the code from <a href="https://github.com/Atomek61/slideshow.js">https://github.com/Atomek61/slideshow.js</a>.
-        Put the contents of the <i>code</i> folder into a folder of your choice.
+        The project is available on <a href="https://github.com/Atomek61/slideshow.js">https://github.com/Atomek61/slideshow.js</a>.
       </p>
     </header>
 
     <section>
+      <h2>Installation</h2>
+      <h3>Refer to the code on my website</h3>
+      <p>
+         Put these lines in your html head:<br/>
+        <code>&lt;script src="https://www.atomek.de/js/slideshow/slideshow.js"&gt;&lt;/script&gt;<br/>
+          &lt;link rel="stylesheet" href="https://www.atomek.de/js/slideshow/slideshow.css"/&gt;</code>
+        </p>
+      <h3>Or download the code to your homepage to avoid the dependency</h3>
+      <p>
+        Get the content of the <i>code</i> folder from <a href="https://github.com/Atomek61/slideshow.js">Github</a> or load it from my website as <a href="code/slideshow.zip">zip file</a>, save them on your server and put these lines in your html head:<br/>
+        <code>&lt;script src="your-folder/slideshow.js"&gt;&lt;/script&gt;<br/>
+        &lt;link rel="stylesheet" href="your-folder/slideshow.css"/&gt;</code>
+      </p>
+    </section>
+
+    <section>
+      <h2>Usage</h2>
+      <ol>
+        <li>
+          Add a line like this in your body where the slideshow shall appear.<br/>
+          <code>&lt;div id="mydivid"&gt;&lt;/div&gt;</code><br/>
+        </li>
+        <li>
+          Enter a piece of JavaScript to your html head:<br/>
+          <pre>
+&lt;script&gt;
+  window.onload = ()=> {new Slideshow(document.getElementById("mydivid"), [
+    "img1.jpg", "Fliegenpilz",
+    "img2.jpg", "Blautäubling",
+    "img3.jpg", "Parasolpilz",
+    "img4.jpg", "Schopftintling"
+  ]);}
+&lt;/script&gt;</pre>
+        </li>
+      </ol>
+      <p>
+        When your side loads a Slideshow instance will be created and the html-contents of your element automatically receives the required html code for your slide show.
+      </p>
+      <p>
+        Another way to supply the image list is to write the list of images with img-tags by your own. In this case you simply ommit the second parameter of the constructors call. <a href="demo/demob.html">Demo B</a> demonstrates this method. Have look on the demos source code and note that you must preserve the classes in the code.
+      </p>
+      <p>
+        Note: When youre images are different in size and aspect ration, its a good idea to add a style like <code>aspect-ratio: 4/3; width: 80%;</code> to your div element, where the aspect-ratio meets your images size. 
+      </p>
+    </section>
+    
+    <section class="codedoc">
       <h2>Constructor</h2>
       <h3>Slideshow(container, picturelist = null)</h3>
       <p>
-        <i>container</i> is the block element (a div) which contains the images.
+        <i class="param">container</i> is the block element (a div) which contains the images.
       </p>
       <p>
-        <i>picturelist</i> is an optional array with pairs of <i>url</i> and <i>title</i>, each describing an image file. If a picturelist is defined, the container should be empty and will be       automatically filled with html code forming a valid list of img tags and some controls.
+        <i class="param">picturelist</i> is an optional array with pairs of <i>url</i> and <i>title</i>, each describing an image file. If a picturelist is defined, the container should be empty and will be automatically filled with html code forming a valid list of img tags and some controls.
       </p>
       <p>
         Example: <code>let slideshow = new Slideshow(document.getElementById("mydiv"), ["demo/img1.jpg", "Image 1", "demo/img2.jpg", "Image 2"]);</code>
@@ -65,11 +112,12 @@
         Interval to the next image in milliseconds. Start the automatic slideshow (cinema mode) with <code>slideshow.start();</code>. Default value is 4000 ms. The minimum is 100 ms.
       </p>
       <p>
-        Example: <code>slideshow.cinemaInterval = 3000;</code>
+        Example: <code>slideshow.cinemaInterval = 3000;</code><br/>
+        Note: you can change the speed with the <a href="#speedprop"><code>speed</code></a> property too.
       </p>
       <h3>autoStop</h3>
       <p>
-        By default the automatic slideshow is interrupted when the user clicks a navigation control (bullet or prev/next). This behaviour can be changed by the variable <i>autoStop</i>;
+        By default the automatic slideshow is interrupted when the user clicks a navigation control (bullet or prev/next). This behaviour can be changed by the variable <i class="param">autoStop</i>;
       </p>
       <h3>fullscreen</h3>
       <p>
@@ -77,6 +125,9 @@
       </p>
 
       <h2>Methods</h2>
+      <p>
+        To call methods of the Slideshow instance, you will have to store it in a global variable. Then you can access the object later.
+      </p>
       <h3>start(immediate = false)</h3>
       <p>
         Starts the slideshow. If immediate is true, the next image will be shown immediately.
@@ -88,9 +139,9 @@
       <p>
         Stops the slideshow. Note: the slideshow is stopped whenever you click on one of the controls.
       </p>
-      <h3>speed(factor = 1.5)</h3>
+      <h3 id="speedprop">speed(factor = 1.5)</h3>
       <p>
-        Simply divides the interval by the factor.
+        Simply divides the interval by the factor. The default interval is 4s.
       </p>
 
       <h2>CSS</h2>
@@ -109,36 +160,44 @@
 }</pre>
        
       </p>
-
-
     </section>
 
     <section>
-      <h2>Example A - create a list of images with titles and let <i>slideshow</i> do the work for you.</h2>
-      <div>
+      <h2>Example A</h2>
+      <p>Create a list of images with titles and let <i>slideshow</i> do the work for you.</p>
+      <p>
         Click <a href="demo/demoa.html">Demo A</a> and have a look on the source code.
-      </div>
+      </p>
     </section>
 
     <section>
-      <h2>Example B - create the div, img and span tags by your own and let <i>slideshow</i> put some live to them.</h2>
-      <div>
+      <h2>Example B</h2>
+      <p>
+        Create the div, img and span tags by your own and let <i>slideshow</i> put some live to them.
+      </p>
+      <p>
         Click <a href="demo/demob.html">Demo B</a> and have a look on the source code.
-      </div>
+      </p>
     </section>
 
     <section>
-      <h2>Example C - Cinema mode: create an html page suitable for a fullscreen slide show of your images.</h2>
-      <div>
+      <h2>Example C</h2>
+      <p>
+        Cinema mode: create an html page suitable for a fullscreen slide show of your images.
+      </p>
+      <p>
         Click <a href="demo/democ.html">Demo C</a>, press F11 and have a look on the source code. Simple - isnt it?
-      </div>
+      </p>
     </section>
 
     <section>
-      <h2>Example D - This example demonstrates the change of the speed in cinema mode. The buttons onclick event assigns a speed in ms: <code>slideshow.cinemaInterval = 1000;</code></h2>
-      <div>
+      <h2>Example D</h2>
+      <p>
+        This example demonstrates the change of the speed in cinema mode. The buttons onclick event assigns a speed in ms: <code>slideshow.cinemaInterval = 1000;</code>
+      </p>
+      <p>
         Click <a href="demo/democ.html">Demo D</a>, press one of the spped buttons and have a look on the source code.
-      </div>
+      </p>
     </section>
 
     <footer>

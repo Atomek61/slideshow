@@ -42,12 +42,18 @@ h2 {
 }
 
 h3 {
-  color: rgb(141, 172, 231);
   font-style: italic;
 }
 
 p {
   margin: 1em;
+}
+
+.codedoc>h3 {
+  color: cornflowerblue;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 14pt;
 }
 
 /* ---------------- special ---------------- */
@@ -78,6 +84,10 @@ u {
 }
 
 code {
+  color: cornflowerblue;
+}
+
+.param {
   color: cornflowerblue;
 }
 

@@ -1,6 +1,6 @@
 :root {
    --svgNormal: hue-rotate(220deg);
-   --svgHover: hue-rotate(320deg);
+   --svgHover: hue-rotate(240deg);
   }
 
 .container {
@@ -33,7 +33,7 @@
   width: 1em; height: 1em;
   cursor: pointer;
   background-size: cover;
-  filter: var(--svgNormal);
+  filter: var(--svgNormal) grayscale(50%) brightness(200%);
   border-radius: 4px;
 }
 
@@ -46,7 +46,11 @@
   transition: 0.6s ease;
   background-color:hsla(80, 50%, 50%, 0.2);
   border-radius: 4px;
-  filter: var(--svgHover);
+  filter: var(--svgHosver);
+}
+
+.prev:active, .next:active {
+  background-color:red;
 }
 
 .bullets {
