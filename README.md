@@ -1,6 +1,6 @@
 # slideshow.js
 
-slideshow (C) 2023 Jan-Erich Schirrmacher, www.atomek.de
+slideshow (C) 2023 Jan-Erich Schirrmacher, www.atomek.de/coding/slideshow
 
 Purpose: simple HTML level photo slideshow library with JavaScript and CSS.
 
